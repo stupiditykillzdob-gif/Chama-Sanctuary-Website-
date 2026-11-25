@@ -1,154 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Birds of Prey &amp; Contact | The D.G. Chama Sanctuary Project</title>
-  <link href="https://googleapis.com" rel="stylesheet">
-  <Style>
-      .faq-wrap { max-width: 900px; margin: 0 auto 20px; }
-                                                
-    details.faq-item { background: var(--forest-card); border: 1px solid rgba(207, 169, 104, 0.4); border-left: 4px solid var(--gold); border-radius: 6px; margin-bottom: 14px; padding: 18px 22px; }
-    details.faq-item summary { font-family: 'Cinzel', serif; font-size: 17px; font-weight: 700; color: var(--gold); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
-    details.faq-item summary::-webkit-details-marker { display: none; }
-    details.faq-item summary::after { content: "+"; font-size: 22px; color: var(--gold); font-weight: 700; }
-    details.faq-item[open] summary::after { content: "−"; }
-    details.faq-item p { margin: 14px 0 0; font-size: 15px; color: var(--text-muted); line-height: 1.6; }
-  
-    :root { --forest-dark: #0d1d16; --forest-card: #13281f; --forest-mid: #1a3529; --gold: #cfa968; --gold-text: #111b16; --text-light: #ffffff; --text-muted: #d4dcd7; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--forest-dark); color: var(--text-light); line-height: 1.65; overflow-x: hidden; }
-    header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(13, 29, 22, 0.96); border-bottom: 1px solid rgba(207, 169, 104, 0.3); }
-    .nav-container { max-width: 1280px; margin: 0 auto; padding: 12px 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
-    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text-light); }
-    .brand-icon { width: 38px; height: 38px; border: 2px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); font-family: 'Cinzel', serif; font-weight: 700; font-size: 15px; flex-shrink: 0; }
-    .brand-name { font-family: 'Cinzel', serif; font-size: 15px; font-weight: 700; line-height: 1.2; }
-    nav ul { list-style: none; display: flex; align-items: center; gap: 20px; }
-    nav a { text-decoration: none; color: var(--text-light); font-size: 14px; font-weight: 600; }
-    nav a.active, nav a:hover { color: var(--gold); }
-    .btn-gold-nav { background: var(--gold); color: var(--gold-text); padding: 9px 18px; font-weight: 700; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; border-radius: 3px; white-space: nowrap; }
-    .page-hero { padding: 165px 24px 80px; text-align: center; background: linear-gradient(to bottom, rgba(11,24,18,0.82), var(--forest-dark)), url('Raptors.jpg') center/cover no-repeat; border-bottom: 1px solid rgba(207, 169, 104, 0.25); }
-    .eyebrow { color: var(--gold); font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; display: block; }
-    .page-hero h1 { font-family: 'Cinzel', serif; font-size: clamp(2.1rem, 4.5vw, 3.4rem); text-transform: uppercase; margin-bottom: 16px; }
-    .page-hero p { max-width: 720px; margin: 0 auto; color: var(--text-muted); font-size: 17px; }
-    .section { max-width: 1200px; margin: 0 auto; padding: 64px 24px; }
-    .split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: start; }
-    .split-img { width: 100%; height: 360px; object-fit: cover; border: 3px solid var(--gold); border-radius: 6px; box-shadow: 0 16px 34px rgba(0,0,0,0.5); }
-    h2 { font-family: 'Cinzel', serif; font-size: clamp(1.7rem, 3vw, 2.3rem); margin-bottom: 18px; line-height: 1.25; }
-    p { color: var(--text-muted); margin-bottom: 16px; font-size: 16px; }
-    .raptor-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
-    .raptor-list li { padding-left: 24px; position: relative; font-size: 15px; color: var(--text-light); }
-    .raptor-list li::before { content: "✦"; position: absolute; left: 0; color: var(--gold); }
-    .contact-box { background: var(--forest-card); border: 2px solid var(--gold); padding: 36px; border-radius: 6px; }
-    .form-group { margin-bottom: 18px; }
-    label { display: block; font-size: 13px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
-    input, select, textarea { width: 100%; padding: 12px 14px; background: var(--forest-dark); border: 1px solid rgba(207, 169, 104, 0.45); border-radius: 4px; color: var(--text-light); font-family: inherit; font-size: 15px; }
-    textarea { min-height: 120px; resize: vertical; }
-    .btn-primary { display: inline-block; width: 100%; text-align: center; background: var(--gold); color: var(--gold-text); padding: 15px 28px; font-size: 13px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; text-decoration: none; border: none; border-radius: 3px; cursor: pointer; }
-    .direct-card { background: var(--forest-card); border: 1px solid rgba(207, 169, 104, 0.35); padding: 28px; border-radius: 6px; margin-bottom: 24px; }
-    .direct-card h3 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 19px; margin-bottom: 10px; }
-    .direct-card a { color: var(--text-light); font-weight: 600; text-decoration: underline; word-break: break-all; }
-    footer { background: #08120e; padding: 50px 24px 28px; border-top: 1px solid rgba(207,169,104,0.2); margin-top: 40px; }
-    .footer-inner { max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .footer-col h4 { font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 12px; font-size: 15px; }
-    .footer-col p, .footer-col a { color: var(--text-muted); font-size: 14px; text-decoration: none; display: block; margin-bottom: 8px; }
-    .copyright { max-width: 1280px; margin: 20px auto 0; text-align: center; font-size: 13px; color: #8a9991; }
-    @media (max-width: 960px) { .nav-container { justify-content: center; } nav { width: 100%; border-top: 1px solid rgba(207,169,104,0.25); padding-top: 8px; } nav ul { justify-content: center; gap: 18px; } .split-grid { grid-template-columns: 1fr; } .split-img { height: 260px; } }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birds of Prey & Contact | The D.G. Chama Sanctuary Project</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-form {
+      background-color: #ffffff;
+      border: 1px solid #d4dcd6;
+      border-radius: 8px;
+      padding: 24px;
+      margin-top: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 700;
+      color: #1b3b2b;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #b8c4bc;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-family: inherit;
+      box-sizing: border-box;
+      background-color: #fafcfb;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #1b3b2b;
+      background-color: #ffffff;
+    }
+    .btn-submit {
+      background-color: #1b3b2b;
+      color: #ffffff;
+      border: none;
+      padding: 14px 26px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+    .btn-submit:hover {
+      background-color: #27523c;
+    }
+    .hidden {
+      display: none;
+    }
   </style>
-</hea<body>
+</head>
+<body>
   <header>
-    <div class="nav-container">
-      <a href="index.html" class="brand"><div class="brand-icon">DG</div><div class="brand-name">The D.G. Chama<br>Sanctuary Project</div></a>
-      <nav><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="raptors-contact.html" class="active">Raptors &amp; Contact</a></li></ul></nav>
-      <a href="index.html#sponsorships" class="btn-gold-nav">Sponsor Now</a>
+    <div class="container">
+      <h1>THE D.G. CHAMA SANCTUARY PROJECT</h1>
+      <p class="subtitle">Chama, New Mexico &bull; 1,917-Acre Wildlife &amp; Veteran Refuge</p>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="sponsorship.html">Sponsorships</a>
+        <a href="veterans.html">Disabled Veterans</a>
+        <a href="youth.html">Youth Mentorship</a>
+        <a href="raptors-contact.html" class="active">Birds of Prey &amp; Contact</a>
+      </nav>
     </div>
   </header>
-  <section class="page-hero">
-    <span class="eyebrow">Avian Conservation &amp; Sanctuary Inquiries</span>
-    <h1>Birds of Prey &amp; Contact</h1>
-    <p>Protecting native New Mexico raptors and connecting with sponsors, disabled veterans, and conservation partners across the Chama Valley.</p>
-  </section>
-  <section class="section">
-    <div class="split-grid" style="align-items: center;">
-      <img class="split-img" src="Raptors.jpg" alt="Golden Eagle at Chama Sanctuary">
-      <div>
-                <span class="eyebrow">Avian Habitat &amp; Falconry</span>
 
-        <h2>Birds of Prey Sanctuary &amp; Conservation</h2>
-        <p>The rocky cliffs, old-growth timber, and open meadows of our 1,917-acre Chama Valley property provide critical territory for golden eagles, red-tailed hawks, peregrine falcons, and native owls.</p>
-        <ul class="raptor-list">
-                    <li><strong>Visiting Educational Falconry:</strong> Hosting licensed visiting falconers for safe, strictly regulated educational demonstrations and avian appreciation.</li>
-
-          <li><strong>Protected Hunting Grounds:</strong> Strict zero-predator-hunting and chemical-free land policies preserve natural prey populations.</li>
-          <li><strong>Educational Outreach:</strong> Introducing veterans and youth mentees to raptor ecology and ethical wildlife stewardship.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-    <section class="section" style="padding-top: 0; padding-bottom: 30px;">
-    <div class="faq-wrap">
-      <span class="eyebrow" style="text-align: center;">Common Questions</span>
-      <h2 style="text-align: center; margin-bottom: 28px;">Frequently Asked Questions</h2>
-
-      <details class="faq-item">
-        <summary>How do disabled veterans apply for guided hunts or retreats?</summary>
-        <p>Disabled veterans can reach out directly through our contact form below or email info@dgchamariversanctuaryproject.com. We offer low-cost, personally guided elk, mule deer, and wild turkey hunts—with species seasons separated for safety and herd health—alongside peaceful backcountry sanctuary stays.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>How does the Youth Mentorship program work?</summary>
-        <p>Our youth mentorship program pairs young outdoorsmen and single-parent families with experienced sanctuary leadership for hands-on conservation education, ethical wild turkey hunting, wildlife tracking, and catch-and-release Rio Grande cutthroat trout fishing.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>How are sponsorship and donor contributions used?</summary>
-        <p>100% of partner and sponsor support goes directly toward stewarding our 1,917-acre Chama Valley habitat, maintaining catch-and-release trout ponds, planting wildlife forage, protecting native raptor habitat, and keeping veteran and youth programs accessible.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Does the sanctuary house captive raptors or host falconry?</summary>
-        <p>We focus on protecting undisturbed cliff, meadow, and timber habitat for wild native eagles, hawks, falcons, and owls—and we host licensed visiting falconers for strictly regulated educational demonstrations and avian appreciation.</p>
-      </details>
+  <section class="hero">
+    <div class="container">
+      <h2>Protecting Northern New Mexico&rsquo;s Native Raptors &amp; Connecting With Our Team.</h2>
+      <p>Wild rangeland habitat conservation, visiting educational falconry workshops, and direct outreach with Founder &amp; Executive Director David J. O&rsquo;Bryon.</p>
+      <img src="images/hero-raptors.jpg" alt="Wild Prairie Falcon perched over a mountain pond at sunrise in Chama, New Mexico" style="width:100%; max-height:440px; object-fit:cover; border-radius:8px; margin-top:20px; border:2px solid #d4af37;">
     </div>
   </section>
 
-  <section class="section" id="contact-form" style="padding-top: 10px;">
-    <div class="split-grid">
-      <div>
-        <span class="eyebrow">Connect With Us</span>
-        <h2>Partner, Sponsor, or Inquire</h2>
-        <p>Whether you are interested in corporate sponsorship, veteran hunt applications, youth mentorship, or birds of prey conservation partnerships, reach out directly to our team.</p>
-        <div class="direct-card">
-          <h3>Official Sanctuary Email</h3>
-          <p>For sponsorship packets, board inquiries, and program questions:</p>
-          <a href="mailto:info@dgchamariversanctuaryproject.com">info@dgchamariversanctuaryproject.com</a>
+  <main class="container">
+    <section class="content-section">
+      <h3>Wild Raptor Habitat &amp; Visiting Educational Falconry</h3>
+      <p>Rather than confining permanent resident birds in cages or aviaries, <strong>The D.G. Chama Sanctuary Project</strong> invests directly in wild rangeland habitat enhancements across our 1,917 acres&mdash;supporting native Bald and Golden Eagles, Red-tailed Hawks, Cooper&rsquo;s Hawks, Peregrine Falcons, Prairie Falcons, American Kestrels, Ospreys, and Great Horned Owls:</p>
+      <ul>
+        <li><strong>Wild Raptor Infrastructure:</strong> We install 6 to 8 natural cedar and pine hunting perches, kestrel and owl nesting boxes, and high-visibility vinyl fence flight diverters along rangeland fencing, while enforcing year-round closures on our 200-Acre Upland Breeding Escarpment and a 660-foot seasonal buffer around any active Bald or Golden Eagle nests.</li>
+        <li><strong>Lead-Free &amp; Rodenticide-Free Standards:</strong> We require 100% lead-free fishing tackle and strictly prohibit chemical rodenticides to protect raptors from secondary poisoning.</li>
+        <li><strong>Visiting Educational Falconry Demonstrations:</strong> We partner with visiting credentialed Master Falconers and licensed raptor educators to host permitted glove-handling and flight workshops in an open meadow clearing inside our 100-Acre Sanctuary Core (set at least 200 yards away from our trout ponds, homestead ring, and breeding escarpment).</li>
+      </ul>
+    </section>
+
+    <section class="content-section" id="contact">
+      <h3>Contact Our Leadership Team</h3>
+      <p>Use the direct inquiry form below to connect with Founder &amp; Executive Director <strong>David J. O&rsquo;Bryon</strong> regarding Founding Corporate Sponsorships, Disabled Veteran retreats, Single-Parent Youth mentorships, or Raptor Conservation partnerships. Every submission routes directly to <strong>info@dgchamasanctuaryproject.com</strong>.</p>
+      <ul>
+        <li><strong>Organization:</strong> The D.G. Chama Sanctuary Project</li>
+        <li><strong>Founder &amp; Executive Director:</strong> David J. O&rsquo;Bryon</li>
+        <li><strong>Sanctuary Location:</strong> Chama / Tierra Amarilla, New Mexico (Chama Valley)</li>
+        <li><strong>Direct Email:</strong> <a href="mailto:info@dgchamasanctuaryproject.com">info@dgchamasanctuaryproject.com</a></li>
+      </ul>
+
+      <form name="sanctuary-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+        <input type="hidden" name="form-name" value="sanctuary-contact">
+        <p class="hidden">
+          <label>Don&rsquo;t fill this out if you&rsquo;re human: <input name="bot-field"></label>
+        </p>
+
+        <div class="form-group">
+          <label for="full-name">Full Name *</label>
+          <input type="text" id="full-name" name="full-name" required placeholder="Your full name">
         </div>
-        <div class="direct-card">
-          <h3>Sanctuary Location</h3>
-          <p>Chama Valley • Northern New Mexico<br>1,917 Acres of Protected Alpine Habitat &amp; Trout Waters</p>
+
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com">
         </div>
-      </div>
-      <div class="contact-box">
-        <h3 style="font-family: 'Cinzel', serif; color: var(--gold); font-size: 22px; margin-bottom: 18px;">Send a Direct Message</h3>
-        <form action="mailto:info@dgchamariversanctuaryproject.com" method="post" enctype="text/plain">
-          <div class="form-group"><label for="name">Your Name</label><input type="text" id="name" name="Name" required placeholder="Full Name"></div>
-          <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="Email" required placeholder="you@example.com"></div>
-          <div class="form-group"><label for="topic">Inquiry Topic</label><select id="topic" name="Topic"><option value="Sponsorship Opportunities">Sponsorship Opportunities</option><option value="Disabled Veterans Program">Disabled Veterans Program</option><option value="Youth Mentorship">Youth Mentorship</option><option value="Birds of Prey Conservation">Birds of Prey Conservation</option><option value="General Question">General Question</option></select></div>
-          <div class="form-group"><label for="message">Message</label><textarea id="message" name="Message" required placeholder="How can we partner together?"></textarea></div>
-          <button type="submit" class="btn-primary">Send Sanctuary Inquiry</button>
-        </form>
-      </div>
-    </div>
-  </section>
+
+        <div class="form-group">
+          <label for="phone">Phone Number (Optional)</label>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555">
+        </div>
+
+        <div class="form-group">
+          <label for="inquiry-type">Inquiry Topic *</label>
+          <select id="inquiry-type" name="inquiry-type" required>
+            <option value="Founding Corporate Sponsorship">Founding Corporate Sponsorship / Cabin Naming Rights</option>
+            <option value="Disabled Veterans Program">Disabled Veterans Outdoor Access Program</option>
+            <option value="Single-Parent Youth Mentorship">Single-Parent &amp; Youth Outdoor Mentorship</option>
+            <option value="Birds of Prey & Conservation">Birds of Prey &amp; Conservation Partnership</option>
+            <option value="General Inquiry">General Sanctuary Inquiry</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Tell us how you would like to partner with or visit The D.G. Chama Sanctuary Project..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Send Message to Sanctuary Team</button>
+      </form>
+    </section>
+
+    <section class="content-section">
+      <h3>Frequently Asked Questions (FAQ)</h3>
+      <ul>
+        <li><strong>Is the sanctuary open to walk-in public traffic?</strong> No. All visits, retreats, and sponsor tours operate strictly by pre-scheduled appointment to protect wildlife habitat and guest privacy.</li>
+        <li><strong>Are ATVs or off-road vehicles allowed?</strong> No. All commercial and hosted hunting is strictly non-motorized (foot-travel only) outside designated entry roads.</li>
+        <li><strong>Is predator hunting allowed?</strong> No. Bears, mountain lions, coyotes, bobcats, and foxes are strictly protected, and all staff and guests carry EPA-registered bear spray in the field.</li>
+        <li><strong>Are smoking or vaping allowed?</strong> Strictly prohibited across all sanctuary grounds except inside two isolated, fire-safe designated stations.</li>
+        <li><strong>How can corporations or foundations become Founding Sponsors?</strong> Submit the form above or email David J. O&rsquo;Bryon at <a href="mailto:info@dgchamasanctuaryproject.com">info@dgchamasanctuaryproject.com</a> to request our full Year 1 Conservation &amp; Program Prospectus.</li>
+      </ul>
+    </section>
+  </main>
+
   <footer>
-    <div class="footer-inner">
-      <div class="footer-col"><h4>The D.G. Chama Sanctuary Project</h4><p>Chama, New Mexico</p><p>Preserving wildlife habitat, protecting birds of prey, and serving disabled veterans.</p></div>
-      <div class="footer-col"><h4>Navigation</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a href="raptors-contact.html">Raptors &amp; Contact</a></div>
-      <div class="footer-col"><h4>Contact Us</h4><a href="mailto:info@dgchamariversanctuaryproject.com">info@dgchamariversanctuaryproject.com</a><p>Chama Valley, NM</p></div>
+    <div class="container">
+      <p><strong>The D.G. Chama Sanctuary Project</strong> | Chama, New Mexico</p>
+      <p>Founder &amp; Executive Director: David J. O&rsquo;Bryon | Email: <a href="mailto:info@dgchamasanctuaryproject.com">info@dgchamasanctuaryproject.com</a></p>
+      <p>Committed to permanent conservation and ethical wildlife stewardship.</p>
     </div>
-    <div class="copyright">&copy; 2026 The D.G. Chama Sanctuary Project. All Rights Reserved.</div>
   </footer>
 </body>
 </html>
-
-
