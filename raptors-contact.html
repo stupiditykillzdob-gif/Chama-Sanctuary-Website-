@@ -9,16 +9,16 @@
     :root { --forest-dark: #0d1d16; --forest-card: #13281f; --forest-mid: #1a3529; --gold: #cfa968; --gold-text: #111b16; --text-light: #ffffff; --text-muted: #d4dcd7; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--forest-dark); color: var(--text-light); line-height: 1.65; overflow-x: hidden; }
-    header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(13, 29, 22, 0.96); border-bottom: 1px solid rgba(207, 169, 104, 0.25); }
-    .nav-container { max-width: 1280px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(13, 29, 22, 0.96); border-bottom: 1px solid rgba(207, 169, 104, 0.3); }
+    .nav-container { max-width: 1280px; margin: 0 auto; padding: 12px 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
     .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text-light); }
     .brand-icon { width: 38px; height: 38px; border: 2px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); font-family: 'Cinzel', serif; font-weight: 700; font-size: 15px; flex-shrink: 0; }
     .brand-name { font-family: 'Cinzel', serif; font-size: 15px; font-weight: 700; line-height: 1.2; }
-    nav ul { list-style: none; display: flex; gap: 22px; }
-    nav a { text-decoration: none; color: var(--text-light); font-size: 14px; font-weight: 500; }
-    nav a.active { color: var(--gold); font-weight: 700; }
+    nav ul { list-style: none; display: flex; align-items: center; gap: 20px; }
+    nav a { text-decoration: none; color: var(--text-light); font-size: 14px; font-weight: 600; }
+    nav a.active, nav a:hover { color: var(--gold); }
     .btn-gold-nav { background: var(--gold); color: var(--gold-text); padding: 9px 18px; font-weight: 700; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; border-radius: 3px; white-space: nowrap; }
-    .page-hero { padding: 140px 24px 80px; text-align: center; background: linear-gradient(to bottom, rgba(11,24,18,0.82), var(--forest-dark)), url('Raptors.jpg') center/cover no-repeat; border-bottom: 1px solid rgba(207, 169, 104, 0.25); }
+    .page-hero { padding: 165px 24px 80px; text-align: center; background: linear-gradient(to bottom, rgba(11,24,18,0.82), var(--forest-dark)), url('Raptors.jpg') center/cover no-repeat; border-bottom: 1px solid rgba(207, 169, 104, 0.25); }
     .eyebrow { color: var(--gold); font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; display: block; }
     .page-hero h1 { font-family: 'Cinzel', serif; font-size: clamp(2.1rem, 4.5vw, 3.4rem); text-transform: uppercase; margin-bottom: 16px; }
     .page-hero p { max-width: 720px; margin: 0 auto; color: var(--text-muted); font-size: 17px; }
@@ -44,47 +44,42 @@
     .footer-col h4 { font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 12px; font-size: 15px; }
     .footer-col p, .footer-col a { color: var(--text-muted); font-size: 14px; text-decoration: none; display: block; margin-bottom: 8px; }
     .copyright { max-width: 1280px; margin: 20px auto 0; text-align: center; font-size: 13px; color: #8a9991; }
-    @media (max-width: 900px) .nav-container { flex-wrap: wrap; justify-content: center; gap: 10px; } nav { width: 100%; border-top: 1px solid rgba(207, 169, 104, 0.25); padding-top: 8px; } nav ul { justify-content: center; gap: 18px; }
+    @media (max-width: 960px) { .nav-container { justify-content: center; } nav { width: 100%; border-top: 1px solid rgba(207,169,104,0.25); padding-top: 8px; } nav ul { justify-content: center; gap: 18px; } .split-grid { grid-template-columns: 1fr; } .split-img { height: 260px; } }
   </style>
-</head>
-<body>
+</hea<body>
   <header>
     <div class="nav-container">
       <a href="index.html" class="brand"><div class="brand-icon">DG</div><div class="brand-name">The D.G. Chama<br>Sanctuary Project</div></a>
-      <nav><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="raptors-contact.html" style="color:var(--gold);font-weight:700;">Raptors &amp; Contact</a></li></ul></nav>
-
+      <nav><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="raptors-contact.html" class="active">Raptors &amp; Contact</a></li></ul></nav>
       <a href="index.html#sponsorships" class="btn-gold-nav">Sponsor Now</a>
     </div>
   </header>
-
   <section class="page-hero">
     <span class="eyebrow">Avian Conservation &amp; Sanctuary Inquiries</span>
     <h1>Birds of Prey &amp; Contact</h1>
     <p>Protecting native New Mexico raptors and connecting with sponsors, disabled veterans, and conservation partners across the Chama Valley.</p>
   </section>
-
   <section class="section">
     <div class="split-grid" style="align-items: center;">
       <img class="split-img" src="Raptors.jpg" alt="Golden Eagle at Chama Sanctuary">
       <div>
         <span class="eyebrow">Dedicated Avian Facilities</span>
-        <h2>Birds of Prey Sanctuary &amp; Care</h2>
+        <h2>Birds of Prey Sanctuary &amp; Conservation</h2>
         <p>The rocky cliffs, old-growth timber, and open meadows of our 1,917-acre Chama Valley property provide critical territory for golden eagles, red-tailed hawks, peregrine falcons, and native owls.</p>
         <ul class="raptor-list">
-          <li><strong>Specialized Raptor Enclosures:</strong> Purpose-built mews and flight conditioning facilities designed for safe recovery and long-term care.</li>
+          <li><strong>Specialized Raptor Enclosures:</strong> Purpose-built mews and sanctuary facilities designed for native raptor conservation, sanctuary care, and visiting educational falconry demonstrations.</li>
           <li><strong>Protected Hunting Grounds:</strong> Strict zero-predator-hunting and chemical-free land policies preserve natural prey populations.</li>
           <li><strong>Educational Outreach:</strong> Introducing veterans and youth mentees to raptor ecology and ethical wildlife stewardship.</li>
         </ul>
       </div>
     </div>
   </section>
-
   <section class="section" id="contact-form" style="padding-top: 10px;">
     <div class="split-grid">
       <div>
         <span class="eyebrow">Connect With Us</span>
         <h2>Partner, Sponsor, or Inquire</h2>
-        <p>Whether you are interested in corporate sponsorship, veteran hunt applications, youth mentorship, or raptor conservation partnerships, reach out directly to our team.</p>
+        <p>Whether you are interested in corporate sponsorship, veteran hunt applications, youth mentorship, or birds of prey conservation partnerships, reach out directly to our team.</p>
         <div class="direct-card">
           <h3>Official Sanctuary Email</h3>
           <p>For sponsorship packets, board inquiries, and program questions:</p>
@@ -95,41 +90,21 @@
           <p>Chama Valley • Northern New Mexico<br>1,917 Acres of Protected Alpine Habitat &amp; Trout Waters</p>
         </div>
       </div>
-
       <div class="contact-box">
         <h3 style="font-family: 'Cinzel', serif; color: var(--gold); font-size: 22px; margin-bottom: 18px;">Send a Direct Message</h3>
         <form action="mailto:info@dgchamariversanctuaryproject.com" method="post" enctype="text/plain">
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="Name" required placeholder="Full Name">
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="Email" required placeholder="you@example.com">
-          </div>
-          <div class="form-group">
-            <label for="topic">Inquiry Topic</label>
-            <select id="topic" name="Topic">
-              <option value="Sponsorship Opportunities">Sponsorship Opportunities</option>
-              <option value="Disabled Veterans Program">Disabled Veterans Program</option>
-              <option value="Youth Mentorship">Youth Mentorship</option>
-              <option value="Birds of Prey / Conservation">Birds of Prey &amp; Conservation</option>
-              <option value="General Question">General Question</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="Message" required placeholder="How can we partner together?"></textarea>
-          </div>
+          <div class="form-group"><label for="name">Your Name</label><input type="text" id="name" name="Name" required placeholder="Full Name"></div>
+          <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="Email" required placeholder="you@example.com"></div>
+          <div class="form-group"><label for="topic">Inquiry Topic</label><select id="topic" name="Topic"><option value="Sponsorship Opportunities">Sponsorship Opportunities</option><option value="Disabled Veterans Program">Disabled Veterans Program</option><option value="Youth Mentorship">Youth Mentorship</option><option value="Birds of Prey Conservation">Birds of Prey Conservation</option><option value="General Question">General Question</option></select></div>
+          <div class="form-group"><label for="message">Message</label><textarea id="message" name="Message" required placeholder="How can we partner together?"></textarea></div>
           <button type="submit" class="btn-primary">Send Sanctuary Inquiry</button>
         </form>
       </div>
     </div>
   </section>
-
   <footer>
     <div class="footer-inner">
-      <div class="footer-col"><h4>The D.G. Chama Sanctuary Project</h4><p>Chama, New Mexico</p><p>Preserving wildlife habitat, rehabilitating birds of prey, and serving disabled veterans.</p></div>
+      <div class="footer-col"><h4>The D.G. Chama Sanctuary Project</h4><p>Chama, New Mexico</p><p>Preserving wildlife habitat, protecting birds of prey, and serving disabled veterans.</p></div>
       <div class="footer-col"><h4>Navigation</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a href="raptors-contact.html">Raptors &amp; Contact</a></div>
       <div class="footer-col"><h4>Contact Us</h4><a href="mailto:info@dgchamariversanctuaryproject.com">info@dgchamariversanctuaryproject.com</a><p>Chama Valley, NM</p></div>
     </div>
@@ -137,3 +112,5 @@
   </footer>
 </body>
 </html>
+
+
