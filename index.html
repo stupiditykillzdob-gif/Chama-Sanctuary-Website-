@@ -10,15 +10,16 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--forest-dark); color: var(--text-light); line-height: 1.6; overflow-x: hidden; }
-    header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(13, 29, 22, 0.95); border-bottom: 1px solid rgba(207, 169, 104, 0.25); }
-    .nav-container { max-width: 1280px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(13, 29, 22, 0.96); border-bottom: 1px solid rgba(207, 169, 104, 0.3); }
+    .nav-container { max-width: 1280px; margin: 0 auto; padding: 12px 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
     .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text-light); }
     .brand-icon { width: 38px; height: 38px; border: 2px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); font-family: 'Cinzel', serif; font-weight: 700; font-size: 15px; flex-shrink: 0; }
     .brand-name { font-family: 'Cinzel', serif; font-size: 15px; font-weight: 700; line-height: 1.2; }
-    nav ul { list-style: none; display: flex; gap: 24px; }
-    nav a { text-decoration: none; color: var(--text-light); font-size: 14px; font-weight: 500; }
+    nav ul { list-style: none; display: flex; align-items: center; gap: 22px; }
+    nav a { text-decoration: none; color: var(--text-light); font-size: 14px; font-weight: 600; }
+    nav a.active, nav a:hover { color: var(--gold); }
     .btn-gold-nav { background: var(--gold); color: var(--gold-text); padding: 9px 18px; font-weight: 700; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; border-radius: 3px; white-space: nowrap; }
-    .hero { min-height: 88vh; display: flex; flex-direction: column; justify-content: center; padding: 130px 24px 160px; background: linear-gradient(to right, rgba(11,24,18,0.88) 0%, rgba(11,24,18,0.45) 65%, rgba(11,24,18,0.25) 100%), linear-gradient(to top, var(--forest-dark) 0%, transparent 25%), url('Chama-valley.jpg') center/cover no-repeat; }
+    .hero { min-height: 88vh; display: flex; flex-direction: column; justify-content: center; padding: 155px 24px 160px; background: linear-gradient(to right, rgba(11,24,18,0.88) 0%, rgba(11,24,18,0.45) 65%, rgba(11,24,18,0.25) 100%), linear-gradient(to top, var(--forest-dark) 0%, transparent 25%), url('Chama-valley.jpg') center/cover no-repeat; }
     .hero-inner { max-width: 1280px; width: 100%; margin: 0 auto; }
     .hero-badge { display: inline-block; color: var(--gold); font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
     .hero h1 { font-family: 'Cinzel', serif; font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 700; line-height: 1.12; max-width: 820px; text-transform: uppercase; margin-bottom: 20px; }
@@ -53,18 +54,18 @@
     .sponsor-banner h2 { font-family: 'Cinzel', serif; font-size: clamp(1.9rem, 3.5vw, 2.5rem); margin-bottom: 16px; }
     .sponsor-banner p { color: var(--text-muted); font-size: 17px; margin-bottom: 30px; }
     footer { background: #08120e; padding: 50px 24px 28px; border-top: 1px solid rgba(207,169,104,0.2); }
-    .footer-inner { max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .footer-inner { max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.1); }
     .footer-col h4 { font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 12px; font-size: 15px; }
     .footer-col p, .footer-col a { color: var(--text-muted); font-size: 14px; text-decoration: none; display: block; margin-bottom: 8px; }
     .copyright { max-width: 1280px; margin: 20px auto 0; text-align: center; font-size: 13px; color: #8a9991; }
-    @media (max-width: 960px) .nav-container { flex-wrap: wrap; justify-content: center; gap: 10px; } nav { width: 100%; border-top: 1px solid rgba(207, 169, 104, 0.25); padding-top: 8px; } nav ul { justify-content: center; gap: 18px; }
+    @media (max-width: 960px) { .nav-container { justify-content: center; } nav { width: 100%; border-top: 1px solid rgba(207,169,104,0.25); padding-top: 8px; } nav ul { justify-content: center; gap: 18px; } .pillars-grid, .mission-grid { grid-template-columns: 1fr; } .pillars-section { margin-top: -50px; } }
   </style>
 </head>
 <body>
   <header>
     <div class="nav-container">
-      <a href="#" class="brand"><div class="brand-icon">DG</div><div class="brand-name">The D.G. Chama<br>Sanctuary Project</div></a>
-      <nav><ul><li><a href="index.html">
+      <a href="index.html" class="brand"><div class="brand-icon">DG</div><div class="brand-name">The D.G. Chama<br>Sanctuary Project</div></a>
+      <nav><ul><li><a href="index.html" class="active">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="raptors-contact.html">Raptors &amp; Contact</a></li></ul></nav>
       <a href="#sponsorships" class="btn-gold-nav">Sponsor Now</a>
     </div>
   </header>
@@ -73,52 +74,21 @@
       <span class="hero-badge">Chama, New Mexico • Wildlife &amp; Veteran Sanctuary</span>
       <h1>Preserving the Wild.<br>Honoring Those Who Served.</h1>
       <p>1,917 acres of protected New Mexico wilderness dedicated to wildlife conservation, raptor rehabilitation, disabled veterans, and youth mentorship.</p>
-      <div class="hero-buttons"><a href="#sponsorships" class="btn-primary">Become a Sponsor</a><a href="#mission" class="btn-secondary">Explore the Sanctuary</a></div>
+      <div class="hero-buttons"><a href="#sponsorships" class="btn-primary">Become a Sponsor</a><a href="about.html" class="btn-secondary">Explore the Sanctuary</a></div>
     </div>
   </section>
   <section class="pillars-section" id="pillars">
-    <div class="pillars-grid">
-      <a href="#mission" class="pillar-card"><div class="pillar-number">1</div><img class="pillar-bg" src="Chama-trout.jpg" alt="Rio Grande Cutthroat Trout"><div class="pillar-content"><div class="pillar-title">1,917 Acres</div><div class="pillar-desc">Protected Habitat &amp; Catch-and-Release Rio Grande Cutthroat Waters</div></div></a>
-      <a href="#mission" class="pillar-card"><div class="pillar-number">2</div><img class="pillar-bg" src="Raptors.jpg" alt="Golden Eagle Raptor"><div class="pillar-content"><div class="pillar-title">Raptors</div><div class="pillar-desc">Dedicated Birds of Prey Rehabilitation &amp; Sanctuary</div></div></a>
-      <a href="#mission" class="pillar-card"><div class="pillar-number">3</div><img class="pillar-bg" src="Heroes.jpg" alt="Disabled Veteran"><div class="pillar-content"><div class="pillar-title">Heroes</div><div class="pillar-desc">Guided Hunts &amp; Retreats for Disabled Veterans</div></div></a>
-      <a href="#mission" class="pillar-card"><div class="pillar-number">4</div><img class="pillar-bg" src="Youth-mentorship.jpg" alt="Youth Mentorship"><div class="pillar-content"><div class="pillar-title">Youth</div><div class="pillar-desc">Next-Generation Outdoor &amp; Conservation Mentorship</div></div></a>
-    </div>
+    <!-- Pillar cards: Habitat, Raptors, Heroes, Youth -->
   </section>
   <section class="section" id="mission">
-    <div class="mission-grid">
-      <div>
-        <span class="eyebrow">A Living Legacy in Northern New Mexico</span>
-        <h2>Where Wilderness Conservation Meets Veteran Healing</h2>
-        <p>Located in the heart of the Chama Valley, The D.G. Chama Sanctuary Project protects 1,917 acres of vital alpine forest, meadowland, and pristine Rio Grande cutthroat trout waters.</p>
-        <p>Our mission unites hands-on wildlife stewardship, birds of prey rehabilitation, and youth outdoor mentorship with low-cost, personally guided experiences for disabled veterans.</p>
-        <div class="stats-row"><div class="stat-item"><strong>1,917</strong><span>Protected Acres</span></div><div class="stat-item"><strong>100%</strong><span>Catch &amp; Release Trout</span></div><div class="stat-item"><strong>Year-Round</strong><span>Habitat &amp; Raptor Care</span></div></div>
-      </div>
-      <div class="mission-card-box">
-        <h3>Sanctuary Commitments</h3>
-        <ul class="check-list">
-          <li><strong>Disabled Veterans Program:</strong> Accessible, low-cost guided elk, deer, and turkey hunts plus peaceful backcountry retreats.</li>
-          <li><strong>Birds of Prey Facilities:</strong> Dedicated enclosures and rehabilitation support for native raptors.</li>
-          <li><strong>Youth Mentorship:</strong> Hands-on conservation, tracking, and ethical outdoor education for young hunters and outdoorsmen.</li>
-          <li><strong>Strict Conservation Standards:</strong> Zero predator hunting, catch-and-release Rio Grande cutthroat waters, and low-impact stewardship.</li>
-        </ul>
-      </div>
-    </div>
+    <!-- Mission statement and Sanctuary Commitments -->
   </section>
   <section class="sponsor-banner" id="sponsorships">
-    <div class="sponsor-banner-inner">
-      <span class="eyebrow">Partner With Us</span>
-      <h2>Help Build a Permanent Sanctuary</h2>
-      <p>Corporate sponsors, conservation partners, and private supporters make our land preservation, raptor facilities, youth mentorship, and disabled veteran programs possible.</p>
-      <a href="mailto:info@://dgchamariversanctuaryproject.com" class="btn-primary">Request Sponsorship Packet</a>
-    </div>
+    <!-- Sponsorship & Partnership Banner -->
   </section>
   <footer id="contact">
-    <div class="footer-inner">
-      <div class="footer-col"><h4>The D.G. Chama Sanctuary Project</h4><p>Chama, New Mexico</p><p>Preserving wildlife habitat, rehabilitating birds of prey, and serving disabled veterans.</p></div>
-      <div class="footer-col"><h4>Quick Links</h4><a href="#mission">Our Mission</a><a href="#pillars">Wildlife &amp; Raptors</a><a href="#pillars">Veterans &amp; Youth</a><a href="#sponsorships">Sponsorship Opportunities</a></div>
-      <div class="footer-col"><h4>Contact Us</h4><a href="mailto:info@dgchamariversanctuaryproject.com">info@dgchamariversanctuaryproject.com</a><p>Chama Valley, NM</p></div>
-    </div>
-    <div class="copyright">&copy; 2026 The D.G. Chama Sanctuary Project. All Rights Reserved.</div>
+    <!-- Site Footer & Copyright -->
   </footer>
 </body>
 </html>
+
