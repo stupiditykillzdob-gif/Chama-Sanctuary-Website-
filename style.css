@@ -288,3 +288,13 @@ footer a:hover {
     font-size: 1.55rem;
   }
 }
+/* Fix Header Brand Title Color */
+header a,
+header a:visited,
+.brand,
+.brand:visited,
+.brand span {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
